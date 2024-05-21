@@ -4,16 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_task/features/login_register/cubit/log_reg_cubit.dart';
 import 'package:todo_task/features/login_register/cubit/log_reg_states.dart';
+import 'package:todo_task/features/login_register/register_screen/widgets/register_bloc_listener.dart';
 import 'package:todo_task/features/login_register/widgets/password_field.dart';
 import 'package:todo_task/features/login_register/widgets/phone_field.dart';
 import 'package:todo_task/shared/extensions.dart';
-import 'package:todo_task/shared/routing/routes.dart';
 
 import '../../../shared/styles/text_styles.dart';
 import '../../../shared/widgets/default_button.dart';
 import '../../../shared/widgets/vertical_space.dart';
 import '../widgets/default_text_button.dart';
-import '../widgets/default_text_field.dart';
+import '../../../shared/widgets/default_text_field.dart';
 import '../widgets/drwo_dwon_experience.dart';
 
 
@@ -98,7 +98,8 @@ class RegisterScreen extends StatelessWidget {
                             cubit.clearData();
                           },
                         ),
-                        const VerticalSpace(height: 20)
+                        const VerticalSpace(height: 20),
+                        const RegisterBlocListener(),
                       ],
                     );
                   },

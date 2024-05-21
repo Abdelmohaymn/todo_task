@@ -34,6 +34,15 @@ extension Regex on String{
     }
     return '';
   }
+
+  String removeAfterFirstSpace() {
+    int firstSpaceIndex = indexOf(' ');
+    if (firstSpaceIndex != -1) {
+      return substring(0, firstSpaceIndex);
+    }
+    return this;
+  }
+
 }
 
 

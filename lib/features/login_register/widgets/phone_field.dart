@@ -45,7 +45,7 @@ class PhoneField extends StatelessWidget {
                       cubit.changeCountry(value!);
                     },
                     underline: Container(),
-                    icon: SvgPicture.asset('assets/svgs/drop_down.svg'),
+                    icon: SvgPicture.asset('assets/svgs/arrow_down.svg'),
                   ),
                   const HorizontalSpace(width: 10),
                   Expanded(

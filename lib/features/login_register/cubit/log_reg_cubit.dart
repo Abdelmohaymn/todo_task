@@ -3,7 +3,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_task/features/login_register/login_screen/model/login_body.dart';
 import 'package:todo_task/features/login_register/data/repository.dart';
+import 'package:todo_task/features/login_register/register_screen/model/register_body.dart';
 import 'package:todo_task/shared/extensions.dart';
 
 import '../data/model/phone_model.dart';
@@ -28,19 +30,19 @@ class LogRegCubit extends Cubit<LogRegStates> {
   String? exp;
   List<DropdownMenuItem<String>> levels=[
     const DropdownMenuItem(
-      value: 'Fresh',
+      value: 'fresh',
       child: Text('Fresh'),
     ),
     const DropdownMenuItem(
-      value: 'Junior',
+      value: 'junior',
       child: Text('Junior'),
     ),
     const DropdownMenuItem(
-      value: 'Mid level',
+      value: 'midLevel',
       child: Text('Mid level'),
     ),
     const DropdownMenuItem(
-      value: 'Senior',
+      value: 'senior',
       child: Text('Senior'),
     ),
   ];
@@ -85,9 +87,10 @@ class LogRegCubit extends Cubit<LogRegStates> {
     isPhone = !await validatePhoneNumber();//phoneController.text.isNotBlank()?false:true;
     isPass = passController.text.isNotBlank()?false:true;
     if(!isPhone&&!isPass){
-      //call api;
+      emitLoginStates();
+    }else{
+      emit(const LogRegStates.successCheckState());
     }
-    emit(const LogRegStates.successCheckState());
   }
 
   Future<void> registerUser() async {
@@ -99,7 +102,7 @@ class LogRegCubit extends Cubit<LogRegStates> {
     isAddress = addressController.text.isNotBlank()?false:true;
     isPass = passController.text.isNotBlank()?false:true;
     if(!isPhone&&!isName&&!isExperience&&!isExperience2&&!isAddress&&!isPass){
-      //call api;
+      emitRegisterStates();
     }
     emit(const LogRegStates.successCheckState());
   }
@@ -129,6 +132,46 @@ class LogRegCubit extends Cubit<LogRegStates> {
     isExperience2=false;
     isAddress=false;
     emit(const LogRegStates.successCheckState());
+  }
+
+  void emitLoginStates() async {
+    emit(const LogRegStates.loadLoginUser());
+    final response = await _logRegRepo.login(
+      LoginBody(
+        phone: chosenCountry.getDialCode()+phoneController.text,
+        password: passController.text
+      )
+    );
+    response.when(
+        success: (data){
+          emit(const LogRegStates.successLoginUser());
+        },
+        failure: (error){
+          emit(LogRegStates.errorLoginUser(error: error.apiErrorModel.message!));
+        }
+    );
+  }
+
+  void emitRegisterStates() async {
+    emit(const LogRegStates.loadRegisterUser());
+    final response = await _logRegRepo.register(
+        RegisterBody(
+          phone: chosenCountry.getDialCode()+phoneController.text,
+          password: passController.text,
+          displayName: nameController.text,
+          experienceYears: int.parse(expController.text),
+          address: addressController.text,
+          level: exp,
+        )
+    );
+    response.when(
+        success: (data){
+          emit(const LogRegStates.successRegisterUser());
+        },
+        failure: (error){
+          emit(LogRegStates.errorRegisterUser(error: error.apiErrorModel.message!));
+        }
+    );
   }
 
 }

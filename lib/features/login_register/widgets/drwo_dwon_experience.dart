@@ -44,13 +44,14 @@ class DropDownExperience extends StatelessWidget{
                           value: cubit.exp,
                           items: cubit.levels,
                           onChanged: (value){
-                            cubit.changeExpLevel(value!);
+                            //cubit.changeExpLevel(value!);
+                            cubit.exp=value;
                           },
                           hint: const Text('Choose experience level'),
                           style: GoogleFonts.montserrat(
                               textStyle: TextStyles.font14LightBlack500
                           ),
-                          icon: SvgPicture.asset('assets/svgs/drop_down.svg'),
+                          icon: SvgPicture.asset('assets/svgs/arrow_down.svg'),
                         ),
                       ),
                     ),

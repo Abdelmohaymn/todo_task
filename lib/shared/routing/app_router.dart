@@ -6,6 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_task/features/login_register/cubit/log_reg_cubit.dart';
 import 'package:todo_task/features/login_register/login_screen/login_screen.dart';
 import 'package:todo_task/features/on_boarding_screen/on_boardingScreen.dart';
+import 'package:todo_task/features/tasks/add_task_screen/add_task_screen.dart';
+import 'package:todo_task/features/tasks/cubit/tasks_cubit.dart';
+import 'package:todo_task/features/tasks/data/tasks_repository.dart';
+import 'package:todo_task/features/tasks/my_tasks_screen/tasks_screen.dart';
 import 'package:todo_task/shared/di/dependency_injection.dart';
 import 'package:todo_task/shared/routing/routes.dart';
 
@@ -32,6 +36,20 @@ class AppRouter {
               child: const RegisterScreen(),
             )
       );
+      case Routes.tasksScreen:
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+              create: (context) => getIt<TasksCubit>(),
+              child: const TasksScreen()
+            )
+        );
+      case Routes.addTasksScreen:
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider.value(
+                value: BlocProvider.of<TasksCubit>(settings.arguments as BuildContext),
+                child: const AddTaskScreen()
+            )
+        );
       default :
         SystemNavigator.pop();
         return MaterialPageRoute(

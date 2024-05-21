@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_task/features/login_register/cubit/log_reg_cubit.dart';
 import 'package:todo_task/features/login_register/cubit/log_reg_states.dart';
 import 'package:todo_task/features/login_register/data/model/phone_model.dart';
+import 'package:todo_task/features/login_register/login_screen/widgets/login_bloc_listener.dart';
 import 'package:todo_task/features/login_register/widgets/password_field.dart';
 import 'package:todo_task/features/login_register/widgets/phone_field.dart';
 import 'package:todo_task/shared/extensions.dart';
@@ -68,6 +69,7 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
                 const VerticalSpace(height: 20),
+                const LoginBlocListener(),
               ],
             ),
           ),
