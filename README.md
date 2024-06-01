@@ -31,3 +31,5 @@ This Flutter application is designed for managing to-do tasks. The app includes 
 
 ## Project Structure
 
+![Project structure](screenshots/system_design.png)
+
