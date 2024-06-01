@@ -60,6 +60,7 @@ dependencies:
   qr_flutter: ^4.1.0
   qr_code_scanner: ^1.0.1
   flutter_barcode_scanner: ^2.0.0
+  flutter_secure_storage: ^9.2.2
 
 dev_dependencies:
   flutter_test:
@@ -88,6 +89,7 @@ flutter:
   - assets/images/
   - assets/svgs/
   - assets/jsons/
+  - assets/ca/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

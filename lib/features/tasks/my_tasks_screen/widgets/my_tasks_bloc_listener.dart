@@ -5,6 +5,7 @@ import 'package:todo_task/features/tasks/cubit/tasks_cubit.dart';
 import 'package:todo_task/features/tasks/cubit/tasks_states.dart';
 import 'package:todo_task/features/tasks/my_tasks_screen/models/tasks_response.dart';
 import 'package:todo_task/shared/extensions.dart';
+import 'package:todo_task/shared/network/local/secure_storage/secure_storage_helper.dart';
 import 'package:todo_task/shared/network/local/shared_pred_constants.dart';
 import 'package:todo_task/shared/network/local/shared_pref_helper.dart';
 import 'package:todo_task/shared/routing/routes.dart';
@@ -21,8 +22,8 @@ class MyTasksBlocListener extends StatelessWidget{
       listener: (context,state){
         state.whenOrNull(
           successLogout: (){
-            SharedPrefHelper.removeData(key: SharedPrefConstants.tokenKey);
-            SharedPrefHelper.removeData(key: SharedPrefConstants.refreshTokenKey);
+            SecureStorageHelper.removeData(key: SharedPrefConstants.tokenKey);
+            SecureStorageHelper.removeData(key: SharedPrefConstants.refreshTokenKey);
             context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (Route<dynamic> route) { return false; });
           },
           loadGetQRTask: (){

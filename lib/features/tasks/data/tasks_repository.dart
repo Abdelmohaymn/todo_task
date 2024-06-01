@@ -12,6 +12,7 @@ import 'package:todo_task/features/tasks/my_tasks_screen/models/logout_body.dart
 import 'package:todo_task/features/tasks/my_tasks_screen/models/logout_response.dart';
 import 'package:todo_task/features/tasks/my_tasks_screen/models/tasks_response.dart';
 import 'package:todo_task/features/tasks/task_details_screen/models/edit_task_body.dart';
+import '../../../shared/network/local/secure_storage/secure_storage_helper.dart';
 import '../../../shared/network/local/shared_pred_constants.dart';
 import '../../../shared/network/local/shared_pref_helper.dart';
 import '../../../shared/network/remote/api_result.dart';
@@ -35,15 +36,25 @@ class TasksRepository{
     return null;
   }
 
+  Future<String> getRefToken()async{
+    String? refToken = await SecureStorageHelper.getData(key: SharedPrefConstants.refreshTokenKey);
+    return refToken!;
+  }
+
+  Future<String> getToken()async{
+    String? token = await SecureStorageHelper.getData(key: SharedPrefConstants.tokenKey);
+    return token!;
+  }
+
   //refresh
   Future<void> refreshToken() async{
     try{
       final response = await _apiService.refreshToken(
-        token: SharedPrefHelper.getData(key: SharedPrefConstants.refreshTokenKey)
+        token: await getRefToken()
       );
-        SharedPrefHelper.saveData(key: SharedPrefConstants.tokenKey, value: response.accessToken);
+        SecureStorageHelper.saveData(key: SharedPrefConstants.tokenKey, value: response.accessToken!);
       }catch(error){
-        print('REFRESH_TOKEN_ERROR${ErrorHandler.handle(error).apiErrorModel.message}');
+        //print('REFRESH_TOKEN_ERROR${ErrorHandler.handle(error).apiErrorModel.message}');
       }
   }
 
@@ -67,8 +78,8 @@ class TasksRepository{
     return handleRefreshToken<LogoutResponse>(
           () async {
         final response = await _apiService.logout(
-          LogoutBody(token: SharedPrefHelper.getData(key: SharedPrefConstants.refreshTokenKey)),
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          LogoutBody(token: await getRefToken()),
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
@@ -80,7 +91,7 @@ class TasksRepository{
     return handleRefreshToken<ProfileResponse>(
           () async {
         final response = await _apiService.getProfileData(
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
@@ -92,7 +103,7 @@ class TasksRepository{
           () async {
         final response = await _apiService.uploadImage(
           image,
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
@@ -104,7 +115,7 @@ class TasksRepository{
           () async {
         final response = await _apiService.addTask(
           taskBody,
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
@@ -116,7 +127,7 @@ class TasksRepository{
           () async {
         final response = await _apiService.getTasksList(
           page,
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
@@ -128,7 +139,7 @@ class TasksRepository{
           () async {
         final response = await _apiService.getQRTask(
           id,
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
@@ -140,7 +151,7 @@ class TasksRepository{
           () async {
         final response = await _apiService.editTask(
           id,
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
           editTaskBody
         );
         return ApiResult.success(response);
@@ -153,7 +164,7 @@ class TasksRepository{
           () async {
         final response = await _apiService.deleteTask(
           id,
-          'Bearer ${SharedPrefHelper.getData(key: SharedPrefConstants.tokenKey)}',
+          'Bearer ${await getToken()}',
         );
         return ApiResult.success(response);
       },
