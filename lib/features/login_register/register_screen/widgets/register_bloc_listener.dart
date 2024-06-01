@@ -18,7 +18,7 @@ class RegisterBlocListener extends StatelessWidget{
           loadRegisterUser: (){
             WidgetFunctions.setupLoadingState(context);
           },
-          successRegisterUser: (){
+          successRegisterUser: (data){
             context.pop();
             // move to home
           },

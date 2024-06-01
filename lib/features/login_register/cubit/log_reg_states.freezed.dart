@@ -30,10 +30,10 @@ mixin _$LogRegStates<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,10 +51,10 @@ mixin _$LogRegStates<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) =>
       throw _privateConstructorUsedError;
@@ -72,10 +72,10 @@ mixin _$LogRegStates<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) =>
@@ -220,10 +220,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return initial();
@@ -244,10 +244,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return initial?.call();
@@ -268,10 +268,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -418,10 +418,10 @@ class _$LoadJsonDataImpl<T> implements LoadJsonData<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadJsonData();
@@ -442,10 +442,10 @@ class _$LoadJsonDataImpl<T> implements LoadJsonData<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadJsonData?.call();
@@ -466,10 +466,10 @@ class _$LoadJsonDataImpl<T> implements LoadJsonData<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -616,10 +616,10 @@ class _$SuccessJsonDataImpl<T> implements SuccessJsonData<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return successJsonData();
@@ -640,10 +640,10 @@ class _$SuccessJsonDataImpl<T> implements SuccessJsonData<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return successJsonData?.call();
@@ -664,10 +664,10 @@ class _$SuccessJsonDataImpl<T> implements SuccessJsonData<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -815,10 +815,10 @@ class _$LoadChangeCountryImpl<T> implements LoadChangeCountry<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadChangeCountry();
@@ -839,10 +839,10 @@ class _$LoadChangeCountryImpl<T> implements LoadChangeCountry<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadChangeCountry?.call();
@@ -863,10 +863,10 @@ class _$LoadChangeCountryImpl<T> implements LoadChangeCountry<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -1015,10 +1015,10 @@ class _$SuccessChangeCountryImpl<T> implements SuccessChangeCountry<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return successChangeCountry();
@@ -1039,10 +1039,10 @@ class _$SuccessChangeCountryImpl<T> implements SuccessChangeCountry<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return successChangeCountry?.call();
@@ -1063,10 +1063,10 @@ class _$SuccessChangeCountryImpl<T> implements SuccessChangeCountry<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -1216,10 +1216,10 @@ class _$LoadChangeVisibleStateImpl<T> implements LoadChangeVisibleState<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadChangeVisibleState();
@@ -1240,10 +1240,10 @@ class _$LoadChangeVisibleStateImpl<T> implements LoadChangeVisibleState<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadChangeVisibleState?.call();
@@ -1264,10 +1264,10 @@ class _$LoadChangeVisibleStateImpl<T> implements LoadChangeVisibleState<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -1419,10 +1419,10 @@ class _$SuccessChangeVisibleStateImpl<T>
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return successChangeVisibleState();
@@ -1443,10 +1443,10 @@ class _$SuccessChangeVisibleStateImpl<T>
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return successChangeVisibleState?.call();
@@ -1467,10 +1467,10 @@ class _$SuccessChangeVisibleStateImpl<T>
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -1618,10 +1618,10 @@ class _$LoadCheckStateImpl<T> implements LoadCheckState<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadCheckState();
@@ -1642,10 +1642,10 @@ class _$LoadCheckStateImpl<T> implements LoadCheckState<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadCheckState?.call();
@@ -1666,10 +1666,10 @@ class _$LoadCheckStateImpl<T> implements LoadCheckState<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -1817,10 +1817,10 @@ class _$SuccessCheckStateImpl<T> implements SuccessCheckState<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return successCheckState();
@@ -1841,10 +1841,10 @@ class _$SuccessCheckStateImpl<T> implements SuccessCheckState<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return successCheckState?.call();
@@ -1865,10 +1865,10 @@ class _$SuccessCheckStateImpl<T> implements SuccessCheckState<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -2016,10 +2016,10 @@ class _$LoadChangeExpLevelImpl<T> implements LoadChangeExpLevel<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadChangeExpLevel();
@@ -2040,10 +2040,10 @@ class _$LoadChangeExpLevelImpl<T> implements LoadChangeExpLevel<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadChangeExpLevel?.call();
@@ -2064,10 +2064,10 @@ class _$LoadChangeExpLevelImpl<T> implements LoadChangeExpLevel<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -2217,10 +2217,10 @@ class _$SuccessChangeExpLevelImpl<T> implements SuccessChangeExpLevel<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return successChangeExpLevel();
@@ -2241,10 +2241,10 @@ class _$SuccessChangeExpLevelImpl<T> implements SuccessChangeExpLevel<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return successChangeExpLevel?.call();
@@ -2265,10 +2265,10 @@ class _$SuccessChangeExpLevelImpl<T> implements SuccessChangeExpLevel<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -2415,10 +2415,10 @@ class _$LoadLoginUserImpl<T> implements LoadLoginUser<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadLoginUser();
@@ -2439,10 +2439,10 @@ class _$LoadLoginUserImpl<T> implements LoadLoginUser<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadLoginUser?.call();
@@ -2463,10 +2463,10 @@ class _$LoadLoginUserImpl<T> implements LoadLoginUser<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -2568,6 +2568,8 @@ abstract class _$$SuccessLoginUserImplCopyWith<T, $Res> {
   factory _$$SuccessLoginUserImplCopyWith(_$SuccessLoginUserImpl<T> value,
           $Res Function(_$SuccessLoginUserImpl<T>) then) =
       __$$SuccessLoginUserImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -2577,27 +2579,52 @@ class __$$SuccessLoginUserImplCopyWithImpl<T, $Res>
   __$$SuccessLoginUserImplCopyWithImpl(_$SuccessLoginUserImpl<T> _value,
       $Res Function(_$SuccessLoginUserImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessLoginUserImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SuccessLoginUserImpl<T> implements SuccessLoginUser<T> {
-  const _$SuccessLoginUserImpl();
+  const _$SuccessLoginUserImpl(this.data);
+
+  @override
+  final T data;
 
   @override
   String toString() {
-    return 'LogRegStates<$T>.successLoginUser()';
+    return 'LogRegStates<$T>.successLoginUser(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessLoginUserImpl<T>);
+            other is _$SuccessLoginUserImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessLoginUserImplCopyWith<T, _$SuccessLoginUserImpl<T>> get copyWith =>
+      __$$SuccessLoginUserImplCopyWithImpl<T, _$SuccessLoginUserImpl<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2614,13 +2641,13 @@ class _$SuccessLoginUserImpl<T> implements SuccessLoginUser<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
-    return successLoginUser();
+    return successLoginUser(data);
   }
 
   @override
@@ -2638,13 +2665,13 @@ class _$SuccessLoginUserImpl<T> implements SuccessLoginUser<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
-    return successLoginUser?.call();
+    return successLoginUser?.call(data);
   }
 
   @override
@@ -2662,15 +2689,15 @@ class _$SuccessLoginUserImpl<T> implements SuccessLoginUser<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
     if (successLoginUser != null) {
-      return successLoginUser();
+      return successLoginUser(data);
     }
     return orElse();
   }
@@ -2759,7 +2786,12 @@ class _$SuccessLoginUserImpl<T> implements SuccessLoginUser<T> {
 }
 
 abstract class SuccessLoginUser<T> implements LogRegStates<T> {
-  const factory SuccessLoginUser() = _$SuccessLoginUserImpl<T>;
+  const factory SuccessLoginUser(final T data) = _$SuccessLoginUserImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$SuccessLoginUserImplCopyWith<T, _$SuccessLoginUserImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2839,10 +2871,10 @@ class _$ErrorLoginUserImpl<T> implements ErrorLoginUser<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return errorLoginUser(error);
@@ -2863,10 +2895,10 @@ class _$ErrorLoginUserImpl<T> implements ErrorLoginUser<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return errorLoginUser?.call(error);
@@ -2887,10 +2919,10 @@ class _$ErrorLoginUserImpl<T> implements ErrorLoginUser<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -3044,10 +3076,10 @@ class _$LoadRegisterUserImpl<T> implements LoadRegisterUser<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return loadRegisterUser();
@@ -3068,10 +3100,10 @@ class _$LoadRegisterUserImpl<T> implements LoadRegisterUser<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return loadRegisterUser?.call();
@@ -3092,10 +3124,10 @@ class _$LoadRegisterUserImpl<T> implements LoadRegisterUser<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
@@ -3197,6 +3229,8 @@ abstract class _$$SuccessRegisterUserImplCopyWith<T, $Res> {
   factory _$$SuccessRegisterUserImplCopyWith(_$SuccessRegisterUserImpl<T> value,
           $Res Function(_$SuccessRegisterUserImpl<T>) then) =
       __$$SuccessRegisterUserImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -3206,27 +3240,52 @@ class __$$SuccessRegisterUserImplCopyWithImpl<T, $Res>
   __$$SuccessRegisterUserImplCopyWithImpl(_$SuccessRegisterUserImpl<T> _value,
       $Res Function(_$SuccessRegisterUserImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessRegisterUserImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SuccessRegisterUserImpl<T> implements SuccessRegisterUser<T> {
-  const _$SuccessRegisterUserImpl();
+  const _$SuccessRegisterUserImpl(this.data);
+
+  @override
+  final T data;
 
   @override
   String toString() {
-    return 'LogRegStates<$T>.successRegisterUser()';
+    return 'LogRegStates<$T>.successRegisterUser(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessRegisterUserImpl<T>);
+            other is _$SuccessRegisterUserImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessRegisterUserImplCopyWith<T, _$SuccessRegisterUserImpl<T>>
+      get copyWith => __$$SuccessRegisterUserImplCopyWithImpl<T,
+          _$SuccessRegisterUserImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3243,13 +3302,13 @@ class _$SuccessRegisterUserImpl<T> implements SuccessRegisterUser<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
-    return successRegisterUser();
+    return successRegisterUser(data);
   }
 
   @override
@@ -3267,13 +3326,13 @@ class _$SuccessRegisterUserImpl<T> implements SuccessRegisterUser<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
-    return successRegisterUser?.call();
+    return successRegisterUser?.call(data);
   }
 
   @override
@@ -3291,15 +3350,15 @@ class _$SuccessRegisterUserImpl<T> implements SuccessRegisterUser<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {
     if (successRegisterUser != null) {
-      return successRegisterUser();
+      return successRegisterUser(data);
     }
     return orElse();
   }
@@ -3388,7 +3447,13 @@ class _$SuccessRegisterUserImpl<T> implements SuccessRegisterUser<T> {
 }
 
 abstract class SuccessRegisterUser<T> implements LogRegStates<T> {
-  const factory SuccessRegisterUser() = _$SuccessRegisterUserImpl<T>;
+  const factory SuccessRegisterUser(final T data) =
+      _$SuccessRegisterUserImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$SuccessRegisterUserImplCopyWith<T, _$SuccessRegisterUserImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3469,10 +3534,10 @@ class _$ErrorRegisterUserImpl<T> implements ErrorRegisterUser<T> {
     required TResult Function() loadChangeExpLevel,
     required TResult Function() successChangeExpLevel,
     required TResult Function() loadLoginUser,
-    required TResult Function() successLoginUser,
+    required TResult Function(T data) successLoginUser,
     required TResult Function(String error) errorLoginUser,
     required TResult Function() loadRegisterUser,
-    required TResult Function() successRegisterUser,
+    required TResult Function(T data) successRegisterUser,
     required TResult Function(String error) errorRegisterUser,
   }) {
     return errorRegisterUser(error);
@@ -3493,10 +3558,10 @@ class _$ErrorRegisterUserImpl<T> implements ErrorRegisterUser<T> {
     TResult? Function()? loadChangeExpLevel,
     TResult? Function()? successChangeExpLevel,
     TResult? Function()? loadLoginUser,
-    TResult? Function()? successLoginUser,
+    TResult? Function(T data)? successLoginUser,
     TResult? Function(String error)? errorLoginUser,
     TResult? Function()? loadRegisterUser,
-    TResult? Function()? successRegisterUser,
+    TResult? Function(T data)? successRegisterUser,
     TResult? Function(String error)? errorRegisterUser,
   }) {
     return errorRegisterUser?.call(error);
@@ -3517,10 +3582,10 @@ class _$ErrorRegisterUserImpl<T> implements ErrorRegisterUser<T> {
     TResult Function()? loadChangeExpLevel,
     TResult Function()? successChangeExpLevel,
     TResult Function()? loadLoginUser,
-    TResult Function()? successLoginUser,
+    TResult Function(T data)? successLoginUser,
     TResult Function(String error)? errorLoginUser,
     TResult Function()? loadRegisterUser,
-    TResult Function()? successRegisterUser,
+    TResult Function(T data)? successRegisterUser,
     TResult Function(String error)? errorRegisterUser,
     required TResult orElse(),
   }) {

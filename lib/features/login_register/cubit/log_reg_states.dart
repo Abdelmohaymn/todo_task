@@ -17,11 +17,11 @@ class LogRegStates<T> with _$LogRegStates<T>{
   const factory LogRegStates.successChangeExpLevel() = SuccessChangeExpLevel;
   //login
   const factory LogRegStates.loadLoginUser() = LoadLoginUser;
-  const factory LogRegStates.successLoginUser() = SuccessLoginUser;
+  const factory LogRegStates.successLoginUser(T data) = SuccessLoginUser;
   const factory LogRegStates.errorLoginUser({required String error}) = ErrorLoginUser;
   //register
   const factory LogRegStates.loadRegisterUser() = LoadRegisterUser;
-  const factory LogRegStates.successRegisterUser() = SuccessRegisterUser;
+  const factory LogRegStates.successRegisterUser(T data) = SuccessRegisterUser;
   const factory LogRegStates.errorRegisterUser({required String error}) = ErrorRegisterUser;
 
 }

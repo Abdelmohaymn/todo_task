@@ -7,6 +7,8 @@ import 'package:todo_task/features/login_register/login_screen/model/login_body.
 import 'package:todo_task/features/login_register/data/repository.dart';
 import 'package:todo_task/features/login_register/register_screen/model/register_body.dart';
 import 'package:todo_task/shared/extensions.dart';
+import 'package:todo_task/shared/network/local/shared_pred_constants.dart';
+import 'package:todo_task/shared/network/local/shared_pref_helper.dart';
 
 import '../data/model/phone_model.dart';
 import 'log_reg_states.dart';
@@ -143,8 +145,10 @@ class LogRegCubit extends Cubit<LogRegStates> {
       )
     );
     response.when(
-        success: (data){
-          emit(const LogRegStates.successLoginUser());
+        success: (data)async{
+          await SharedPrefHelper.saveData(key: SharedPrefConstants.tokenKey, value: data.accessToken!);
+          await SharedPrefHelper.saveData(key: SharedPrefConstants.refreshTokenKey, value: data.refreshToken!);
+          emit(LogRegStates.successLoginUser(data));
         },
         failure: (error){
           emit(LogRegStates.errorLoginUser(error: error.apiErrorModel.message!));
@@ -165,8 +169,10 @@ class LogRegCubit extends Cubit<LogRegStates> {
         )
     );
     response.when(
-        success: (data){
-          emit(const LogRegStates.successRegisterUser());
+        success: (data) async {
+          await SharedPrefHelper.saveData(key: SharedPrefConstants.tokenKey, value: data.accessToken!);
+          await SharedPrefHelper.saveData(key: SharedPrefConstants.refreshTokenKey, value: data.refreshToken!);
+          emit(LogRegStates.successRegisterUser(data));
         },
         failure: (error){
           emit(LogRegStates.errorRegisterUser(error: error.apiErrorModel.message!));

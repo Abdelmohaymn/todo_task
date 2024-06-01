@@ -1,27 +1,34 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_task/features/tasks/my_tasks_screen/models/tasks_response.dart';
 
 import '../../../../shared/styles/colors.dart';
 import '../../../../shared/styles/text_styles.dart';
 import '../../../../shared/widgets/horizontal_space.dart';
 import '../../../../shared/widgets/vertical_space.dart';
+import '../../cubit/tasks_cubit.dart';
 
 class ContentTask extends StatelessWidget{
-  const ContentTask({super.key});
+  final int index;
+  const ContentTask({super.key,required this.index});
 
   @override
   Widget build(BuildContext context) {
+    TasksResponse task = context.read<TasksCubit>().tasks[index];
+
     return Expanded(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               Expanded(
                 child: Text(
-                  'Grocery Shopping App',
+                  task.title!,
                   style: GoogleFonts.dmSans(
                       textStyle: TextStyles.font16DarkBlack700
                   ),
@@ -33,12 +40,14 @@ class ContentTask extends StatelessWidget{
                 padding: EdgeInsets.symmetric(vertical: 2.h,horizontal: 6.w),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: ColorManager.lightPurple
+                    color: statusBackgroundColor(task.status!)
                 ),
                 child: Text(
-                  'Inprogress',
+                  task.status!,
                   style: GoogleFonts.dmSans(
-                      textStyle: TextStyles.font12Default500
+                      textStyle: TextStyles.font12Default500.copyWith(
+                        color: statusColor(task.status!)
+                      )
                   ),
                 ),
               )
@@ -46,7 +55,7 @@ class ContentTask extends StatelessWidget{
           ),
           const VerticalSpace(height: 4),
           Text(
-            'This application is designed for super shops. By using this application they can enlist all their products in one place and can deliver. Customers will get a one-stop solution for their daily shopping.',
+            task.desc!,
             style: GoogleFonts.dmSans(
                 textStyle: TextStyles.font14DarkBlack60400
             ),
@@ -56,12 +65,14 @@ class ContentTask extends StatelessWidget{
           const VerticalSpace(height: 4),
           Row(
             children: [
-              SvgPicture.asset('assets/svgs/flag.svg',height: 16.h,width: 16.w,),
+              SvgPicture.asset('assets/svgs/flag.svg',height: 16.h,width: 16.w,color: priorityColor(task.priority!),),
               const HorizontalSpace(width: 4),
               Text(
-                'Medium',
+                task.priority!,
                 style: GoogleFonts.dmSans(
-                    textStyle: TextStyles.font12Default500
+                    textStyle: TextStyles.font12Default500.copyWith(
+                      color: priorityColor(task.priority!)
+                    )
                 ),
               ),
               const Spacer(),
@@ -76,6 +87,33 @@ class ContentTask extends StatelessWidget{
         ],
       ),
     );
+  }
+
+  Color priorityColor(String priority){
+    if(priority=='low') {
+      return ColorManager.blue;
+    } else if(priority =='medium') {
+      return ColorManager.defaultColor;
+    }
+    return ColorManager.orange;
+  }
+
+  Color statusColor(String status){
+    if(status=='waiting') {
+      return ColorManager.orange;
+    } else if(status =='inProgress') {
+      return ColorManager.defaultColor;
+    }
+    return ColorManager.blue;
+  }
+
+  Color statusBackgroundColor(String status){
+    if(status=='waiting') {
+      return ColorManager.lightOrange;
+    } else if(status =='inProgress') {
+      return ColorManager.lightPurple;
+    }
+    return ColorManager.lightBlue;
   }
 
 }

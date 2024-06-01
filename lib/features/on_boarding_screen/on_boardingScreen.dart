@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_task/shared/extensions.dart';
+import 'package:todo_task/shared/network/local/shared_pred_constants.dart';
+import 'package:todo_task/shared/network/local/shared_pref_helper.dart';
 import 'package:todo_task/shared/widgets/default_button.dart';
 import '../../shared/routing/routes.dart';
 import '../../shared/styles/text_styles.dart';
@@ -49,7 +51,9 @@ class OnBoardingScreen extends StatelessWidget{
                   text: 'Let’s Start',
                   nextIcon: 'assets/svgs/arrow_right.svg',
                   onClick: (){
-                    context.pushReplacementNamed(Routes.loginScreen);
+                    SharedPrefHelper.saveData(key: SharedPrefConstants.onBoarding, value: true).then((value){
+                      context.pushReplacementNamed(Routes.loginScreen);
+                    });
                   }
                 ),
                 const VerticalSpace(height: 20),

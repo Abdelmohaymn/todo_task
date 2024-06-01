@@ -125,4 +125,22 @@ class TextStyles{
       fontWeight: FontWeight.w500
   );
 
+  static TextStyle font12LightBlack40500 = TextStyle(
+      fontSize: 12.sp,
+      color: ColorManager.lightBlack.withOpacity(0.4),
+      fontWeight: FontWeight.w500
+  );
+  static TextStyle font18LightBlack60700 = TextStyle(
+      fontSize: 18.sp,
+      color: ColorManager.lightBlack.withOpacity(0.6),
+      fontWeight: FontWeight.w700
+  );
+
+  static TextStyle font16DarkBlack2500 = TextStyle(
+      fontSize: 16.sp,
+      color: ColorManager.darkBlack2,
+      fontWeight: FontWeight.w500
+  );
+
+
 }

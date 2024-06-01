@@ -89,4 +89,23 @@ class WidgetFunctions{
     );
   }
 
+  static showSuccessSnackBar(BuildContext context,String msg){
+    context.pop();
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content:Center(
+            child: Text(
+              msg,
+              style: TextStyles.font16White700,
+            ),
+          ),
+          backgroundColor: Colors.green,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10)
+          ),
+          duration: const Duration(milliseconds: 1000),
+        )
+    );
+  }
+
 }

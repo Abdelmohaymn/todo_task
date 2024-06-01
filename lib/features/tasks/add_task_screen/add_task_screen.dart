@@ -5,11 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_task/features/login_register/widgets/drwo_dwon_experience.dart';
+import 'package:todo_task/features/tasks/add_task_screen/widgets/add_tasks_bloc_listener.dart';
 import 'package:todo_task/features/tasks/add_task_screen/widgets/pick_date.dart';
 import 'package:todo_task/features/tasks/add_task_screen/widgets/text_title.dart';
 import 'package:todo_task/features/tasks/cubit/tasks_cubit.dart';
 import 'package:todo_task/features/tasks/cubit/tasks_states.dart';
 import 'package:todo_task/shared/extensions.dart';
+import 'package:todo_task/shared/routing/routes.dart';
 import 'package:todo_task/shared/styles/colors.dart';
 import 'package:todo_task/shared/styles/text_styles.dart';
 import 'package:todo_task/shared/widget_functions.dart';
@@ -19,6 +21,8 @@ import 'package:todo_task/shared/widgets/default_text_field.dart';
 import 'package:todo_task/shared/widgets/horizontal_space.dart';
 import 'package:todo_task/shared/widgets/svg_button.dart';
 import 'package:todo_task/shared/widgets/vertical_space.dart';
+
+import 'widgets/add_image_card.dart';
 
 class AddTaskScreen extends StatelessWidget {
   const AddTaskScreen({super.key});
@@ -55,33 +59,7 @@ class AddTaskScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    DottedBorder(
-                        color: ColorManager.defaultColor,
-                        radius: const Radius.circular(12),
-                        borderType: BorderType.RRect,
-                        dashPattern: const [1, 1],
-                        child: InkWell(
-                          onTap: () {
-
-                          },
-                          child: SizedBox(
-                            height: 60.h,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SvgPicture.asset('assets/svgs/add_img.svg'),
-                                const HorizontalSpace(width: 8),
-                                Text(
-                                  'Add Img',
-                                  style: GoogleFonts.dmSans(
-                                      textStyle: TextStyles.font19Default500
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                    ),
+                    const AddImageCard(),
                     const VerticalSpace(height: 20),
                     const TextTitle(title: 'Task title',),
                     DefaultTextField(
@@ -125,6 +103,7 @@ class AddTaskScreen extends StatelessWidget {
                       }
                     ),
                     const VerticalSpace(height: 30),
+                    const AddTasksBlocListener()
                   ],
                 ),
               ),

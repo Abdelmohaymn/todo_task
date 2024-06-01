@@ -9,6 +9,7 @@ class ColorManager {
   static const Color lightGrey1 = Color(0xff7F7F7F);
   static const Color lightGrey2 = Color(0xff7C7C80);
   static const Color lightGrey3 = Color(0xffF0ECFF);
+  static const Color lightGrey4 = Color(0xffF5F5F5);
   static const Color lightBlack = Color(0xff2F2F2F);
   static Color darkBlack60 = const Color(0xFF24252C).withOpacity(0.6);
   static const Color lightOrange = Color(0xffFFE4F2);
@@ -17,5 +18,6 @@ class ColorManager {
   static const Color lightBlue = Color(0xffE3F2FF);
   static const Color blue = Color(0xff0087FF);
   static const Color orange = Color(0xffFF7D53);
+  static const Color darkBlack2 = Color(0xff00060D);
 
 }
