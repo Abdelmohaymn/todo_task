@@ -28,6 +28,9 @@ This Flutter application is designed for managing to-do tasks. The app includes 
 ### QR Code Scanning:
 - Allows scanning QR codes to open task details directly.
 
+## Project Structure
+
+
 
 ## Project Structure
 
