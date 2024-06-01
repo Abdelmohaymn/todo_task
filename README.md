@@ -30,6 +30,7 @@ This Flutter application is designed for managing to-do tasks. The app includes 
 
 ## Screenshots
 
+<img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/splash.png" width="375" height="800"/>  <img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/onBoarding.png" width="375" height="800"/>  <img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/login.png" width="375" height="800"/>  <img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/register.png" width="375" height="800"/>  <img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/tasks.png" width="375" height="800"/>  <img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/add.png" width="375" height="800"/>  <img src="https://raw.githubusercontent.com/Abdelmohaymn/todo_task/master/screenshots/edit.png" width="375" height="800"/>
 
 
 ## Project Structure
