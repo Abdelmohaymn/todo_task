@@ -66,9 +66,10 @@ class RegisterScreen extends StatelessWidget {
                         const VerticalSpace(height: 16),
                         DefaultTextField(
                           isError: cubit.isExperience,
-                          messageError: 'This field must not be empty',
+                          messageError: 'Enter a valid number',
                           hint: 'Years of experience',
                           controller: cubit.expController,
+                          inputType: TextInputType.phone
                         ),
                         const VerticalSpace(height: 16),
                         const DropDownExperience(),
@@ -94,7 +95,6 @@ class RegisterScreen extends StatelessWidget {
                           text2: 'Sign in',
                           onClick: () {
                             context.pop();
-                            //context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (Route<dynamic> route)=>false);
                             cubit.clearData();
                           },
                         ),

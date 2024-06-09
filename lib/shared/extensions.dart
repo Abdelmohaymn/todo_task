@@ -27,6 +27,11 @@ extension Regex on String{
     return regex.hasMatch(this);
   }
 
+  bool isNumeric() {
+    final numericRegex = RegExp(r'^\d+$');
+    return numericRegex.hasMatch(this);
+  }
+
   String getDialCode(){
     int plusIndex = indexOf('+');
     if (plusIndex != -1) {

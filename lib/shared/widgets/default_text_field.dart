@@ -15,6 +15,7 @@ class DefaultTextField extends StatelessWidget{
   final String messageError, hint;
   final TextEditingController controller;
   final double? height;
+  final TextInputType? inputType;
   const DefaultTextField({
     super.key,
     required this.isError,
@@ -22,6 +23,7 @@ class DefaultTextField extends StatelessWidget{
     required this.hint,
     required this.controller,
     this.height,
+    this.inputType
   });
 
   @override
@@ -46,7 +48,7 @@ class DefaultTextField extends StatelessWidget{
                     child: TextField(
                       maxLines: null,
                       controller: controller,
-                      keyboardType: TextInputType.text,
+                      keyboardType: inputType??TextInputType.text,
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: hint,

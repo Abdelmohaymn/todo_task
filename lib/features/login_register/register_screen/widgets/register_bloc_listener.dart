@@ -6,6 +6,8 @@ import 'package:todo_task/features/login_register/cubit/log_reg_states.dart';
 import 'package:todo_task/shared/extensions.dart';
 import 'package:todo_task/shared/widget_functions.dart';
 
+import '../../../../shared/routing/routes.dart';
+
 class RegisterBlocListener extends StatelessWidget{
   const RegisterBlocListener({super.key});
 
@@ -20,7 +22,7 @@ class RegisterBlocListener extends StatelessWidget{
           },
           successRegisterUser: (data){
             context.pop();
-            // move to home
+            context.pushNamedAndRemoveUntil(Routes.tasksScreen, predicate: (Route<dynamic> route) { return false; },);
           },
           errorRegisterUser: (error){
             WidgetFunctions.setupErrorState(context, error);

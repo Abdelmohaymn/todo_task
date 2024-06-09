@@ -100,7 +100,7 @@ class LogRegCubit extends Cubit<LogRegStates> {
     emit(const LogRegStates.loadCheckState());
     isPhone = !await validatePhoneNumber();
     isName = nameController.text.isNotBlank()?false:true;
-    isExperience = expController.text.isNotBlank()?false:true;
+    isExperience = expController.text.isNumeric()?false:true;
     isExperience2 = exp!=null?false:true;
     isAddress = addressController.text.isNotBlank()?false:true;
     isPass = passController.text.isNotBlank()?false:true;

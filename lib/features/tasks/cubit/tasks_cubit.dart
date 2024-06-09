@@ -108,6 +108,7 @@ class TasksCubit extends Cubit<TasksStates> {
     emit(const TasksStates.loadChangeCollection());
     chosenCollection = index;
     checkListOfCollection();
+    _tasksRepository.refreshToken();
     emit(const TasksStates.successChangeCollection());
   }
 
@@ -154,8 +155,9 @@ class TasksCubit extends Cubit<TasksStates> {
     if(!isTitle&&!isDescription&&!isPriority&&!isDate&&!isImage){
       //call api
       emitAddTaskStates();
+    }else{
+      emit(const TasksStates.successCheckState());
     }
-    emit(const TasksStates.successCheckState());
   }
 
   void onBackFromAddTask(BuildContext context){
